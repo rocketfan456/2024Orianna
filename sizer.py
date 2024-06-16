@@ -59,6 +59,7 @@ for ii in range(mSeparated.size):
     plt.plot(twPDIStart[ii, :], mFinal[ii, :], linewidth=3.0)
     strLegend.append('Start Mass={0:5.0f} kg'.format(mSeparated[ii]))
 plt.grid()
-plt.xlabel('I am a big dumb-dumb because I did not change the label')
+plt.xlabel('Thrust/Weight ratio at PDI start')
 plt.ylabel('Payload (kg)')
 plt.legend(strLegend)
+plt.show()
