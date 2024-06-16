@@ -1,6 +1,5 @@
 # 2024Orianna
 
-import numpy as np
 import math
 
 # This function will output a summary of each phase
@@ -9,7 +8,7 @@ def PrintData(phaseList):
     print('{0:20s}{1:>11s}{2:>11s}{3:>11s}'.format("Phase Name", "DV (m/s)", "Mass0 (kg)", "MassF (kg)" ))
     print('{0:25s}'.format("------------------------------------------------------------------------" ))
     for curPhase in phaseList:
-        print('{0:20s}{1:11.1f}{2:11.1f}{3:11.1f}'.format(curPhase.strName ))
+        print('{0:20s}{1:11.1f}{2:11.1f}{3:11.1f}'.format(curPhase.strName))
 
 # This class will create a generic "phase" which will do propellant 
 # calculations
