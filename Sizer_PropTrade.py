@@ -187,7 +187,7 @@ plt.xlabel('Start Mass (kg)')
 plt.ylabel('Payload (kg)')
 plt.legend((legString))
 
-legString = ('NTO/MMH', 'LOX/RP-1', 'LOX/Methane', 'LOX/LH2',)  # initialize the list for the legend
+legString = ('NTO/MMH', 'LOX/RP-1', 'LOX/Methane', 'LOX/LH2')  # initialize the list for the legend
 fig2, ax2 = plt.subplots()
 for ii in range(ispSweep.size):
     ax2.plot(mStart[:, ii], cost[:, ii], linewidth=3.0)

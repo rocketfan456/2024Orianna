@@ -18,6 +18,7 @@ mPayload    =np.zeros((nDataPointsMass, rockSweep.size))
 mDry        = np.zeros((nDataPointsMass, rockSweep.size))
 dv          =np.zeros((nDataPointsMass, rockSweep.size))
 twPhase     =np.zeros((nDataPointsMass, rockSweep.size))
+mFinal = np.zeros((nDataPointsMass, rockSweep.size))
 
 mdotRCS     = 3 / 86400     # divide by seconds per day to get rate per second
 
@@ -73,6 +74,8 @@ for jj,indRocket in enumerate(rockSweep):
             TCM3,CoastToLOI,PreLOISett, PreLOIChill, LOI, CoastToTCM4, TCM4,CoastToDOI, PreDOISett, PreDOIChill, DOI, CoastToPDI, \
                 PrePDISett, PrePDIChill, PDI]
 
+
+
         else:
             # This is not a cryogenic engine, so we don't need chill-in or boiloff
             mdotOxBoiloff   = 0    # divide by seconds per day to get rate per second
@@ -102,6 +105,10 @@ for jj,indRocket in enumerate(rockSweep):
             Sequence = [PreTLISett, TLI, CoastToTCM1, PreTCM1Sett, TCM1,CoastToTCM2, TCM2, CoastToTCM3, \
             TCM3,CoastToLOI,PreLOISett,LOI,CoastToTCM4, TCM4,CoastToDOI, PreDOISett, DOI, CoastToPDI, \
                 PrePDISett, PDI]
+
+        mFinal[ii, jj] = PDI.mEnd
+        dv[ii, jj]=PDI.dvPhase
+        twPhase[ii, jj]=PDI.twPhase
 
 
         # Create the Misison Summary and calculate subsystem masses with payload
